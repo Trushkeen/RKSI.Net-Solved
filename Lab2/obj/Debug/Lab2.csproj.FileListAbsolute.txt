@@ -1,0 +1,20 @@
+/Users/ilaloskarev/CSharp/RKSI-DotNet/Lab2/bin/Debug/Lab2.exe.config
+/Users/ilaloskarev/CSharp/RKSI-DotNet/Lab2/bin/Debug/Lab2.exe
+/Users/ilaloskarev/CSharp/RKSI-DotNet/Lab2/bin/Debug/Lab2.pdb
+/Users/ilaloskarev/CSharp/RKSI-DotNet/Lab2/obj/Debug/Lab2.csproj.CoreCompileInputs.cache
+/Users/ilaloskarev/CSharp/RKSI-DotNet/Lab2/obj/Debug/Lab2.exe
+/Users/ilaloskarev/CSharp/RKSI-DotNet/Lab2/obj/Debug/Lab2.pdb
+C:\Users\Scarecrow\Desktop\Projects\Практосы c#\Lab2\bin\Debug\Lab2.exe.config
+C:\Users\Scarecrow\Desktop\Projects\Практосы c#\Lab2\bin\Debug\Lab2.exe
+C:\Users\Scarecrow\Desktop\Projects\Практосы c#\Lab2\bin\Debug\Lab2.pdb
+C:\Users\Scarecrow\Desktop\Projects\Практосы c#\Lab2\obj\Debug\Lab2.csprojAssemblyReference.cache
+C:\Users\Scarecrow\Desktop\Projects\Практосы c#\Lab2\obj\Debug\Lab2.csproj.CoreCompileInputs.cache
+C:\Users\Scarecrow\Desktop\Projects\Практосы c#\Lab2\obj\Debug\Lab2.exe
+C:\Users\Scarecrow\Desktop\Projects\Практосы c#\Lab2\obj\Debug\Lab2.pdb
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet\Lab2\bin\Debug\Lab2.exe.config
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet\Lab2\bin\Debug\Lab2.exe
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet\Lab2\bin\Debug\Lab2.pdb
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet\Lab2\obj\Debug\Lab2.csprojAssemblyReference.cache
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet\Lab2\obj\Debug\Lab2.csproj.CoreCompileInputs.cache
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet\Lab2\obj\Debug\Lab2.exe
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet\Lab2\obj\Debug\Lab2.pdb

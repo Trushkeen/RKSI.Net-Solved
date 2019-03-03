@@ -1,0 +1,35 @@
+/Users/ilaloskarev/CSharp/RKSI-DotNet/Lab1/bin/Debug/Lab1.exe.config
+/Users/ilaloskarev/CSharp/RKSI-DotNet/Lab1/bin/Debug/Lab1.exe
+/Users/ilaloskarev/CSharp/RKSI-DotNet/Lab1/bin/Debug/Lab1.pdb
+/Users/ilaloskarev/CSharp/RKSI-DotNet/Lab1/obj/Debug/Lab1.csprojAssemblyReference.cache
+/Users/ilaloskarev/CSharp/RKSI-DotNet/Lab1/obj/Debug/Lab1.csproj.CoreCompileInputs.cache
+/Users/ilaloskarev/CSharp/RKSI-DotNet/Lab1/obj/Debug/Lab1.exe
+/Users/ilaloskarev/CSharp/RKSI-DotNet/Lab1/obj/Debug/Lab1.pdb
+C:\Users\BabyBon\Desktop\Практосы c#\Lab1\bin\Debug\Lab1.exe.config
+C:\Users\BabyBon\Desktop\Практосы c#\Lab1\bin\Debug\Lab1.exe
+C:\Users\BabyBon\Desktop\Практосы c#\Lab1\bin\Debug\Lab1.pdb
+C:\Users\BabyBon\Desktop\Практосы c#\Lab1\obj\Debug\Lab1.csprojAssemblyReference.cache
+C:\Users\BabyBon\Desktop\Практосы c#\Lab1\obj\Debug\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\BabyBon\Desktop\Практосы c#\Lab1\obj\Debug\Lab1.exe
+C:\Users\BabyBon\Desktop\Практосы c#\Lab1\obj\Debug\Lab1.pdb
+C:\Users\Scarecrow\Desktop\Projects\Практосы c#\Lab1\bin\Debug\Lab1.exe.config
+C:\Users\Scarecrow\Desktop\Projects\Практосы c#\Lab1\bin\Debug\Lab1.exe
+C:\Users\Scarecrow\Desktop\Projects\Практосы c#\Lab1\bin\Debug\Lab1.pdb
+C:\Users\Scarecrow\Desktop\Projects\Практосы c#\Lab1\obj\Debug\Lab1.csprojAssemblyReference.cache
+C:\Users\Scarecrow\Desktop\Projects\Практосы c#\Lab1\obj\Debug\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\Scarecrow\Desktop\Projects\Практосы c#\Lab1\obj\Debug\Lab1.exe
+C:\Users\Scarecrow\Desktop\Projects\Практосы c#\Lab1\obj\Debug\Lab1.pdb
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet\Lab1\bin\Debug\Lab1.exe.config
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet\Lab1\bin\Debug\Lab1.exe
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet\Lab1\bin\Debug\Lab1.pdb
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet\Lab1\obj\Debug\Lab1.csprojAssemblyReference.cache
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet\Lab1\obj\Debug\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet\Lab1\obj\Debug\Lab1.exe
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet\Lab1\obj\Debug\Lab1.pdb
+C:\Users\public static void\Desktop\Практосы c#\RKSI-DotNet-master\Lab1\bin\Debug\Lab1.exe.config
+C:\Users\public static void\Desktop\Практосы c#\RKSI-DotNet-master\Lab1\bin\Debug\Lab1.exe
+C:\Users\public static void\Desktop\Практосы c#\RKSI-DotNet-master\Lab1\bin\Debug\Lab1.pdb
+C:\Users\public static void\Desktop\Практосы c#\RKSI-DotNet-master\Lab1\obj\Debug\Lab1.csprojAssemblyReference.cache
+C:\Users\public static void\Desktop\Практосы c#\RKSI-DotNet-master\Lab1\obj\Debug\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\public static void\Desktop\Практосы c#\RKSI-DotNet-master\Lab1\obj\Debug\Lab1.exe
+C:\Users\public static void\Desktop\Практосы c#\RKSI-DotNet-master\Lab1\obj\Debug\Lab1.pdb
