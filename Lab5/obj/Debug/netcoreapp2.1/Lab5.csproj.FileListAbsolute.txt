@@ -1,0 +1,11 @@
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet-master\Lab5\bin\Debug\netcoreapp2.1\Lab5.deps.json
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet-master\Lab5\bin\Debug\netcoreapp2.1\Lab5.runtimeconfig.json
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet-master\Lab5\bin\Debug\netcoreapp2.1\Lab5.runtimeconfig.dev.json
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet-master\Lab5\bin\Debug\netcoreapp2.1\Lab5.dll
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet-master\Lab5\bin\Debug\netcoreapp2.1\Lab5.pdb
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet-master\Lab5\obj\Debug\netcoreapp2.1\Lab5.csprojAssemblyReference.cache
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet-master\Lab5\obj\Debug\netcoreapp2.1\Lab5.csproj.CoreCompileInputs.cache
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet-master\Lab5\obj\Debug\netcoreapp2.1\Lab5.AssemblyInfoInputs.cache
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet-master\Lab5\obj\Debug\netcoreapp2.1\Lab5.AssemblyInfo.cs
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet-master\Lab5\obj\Debug\netcoreapp2.1\Lab5.dll
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI-DotNet-master\Lab5\obj\Debug\netcoreapp2.1\Lab5.pdb
