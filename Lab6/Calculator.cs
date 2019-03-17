@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Text;
 
 namespace Lab6
 {
@@ -16,11 +18,27 @@ namespace Lab6
         public event CalculatorEvent OnUnableToCompute;
         public event CalculatorEvent OnClear;
 
+        public Calculator()
+        {
+            OnDidChangeRight += Calculator_OnDidChangeRight;
+            OnDidChangeLeft += Calculator_OnDidChangeLeft;
+            OnDidChangeOperation += Calculator_OnDidChangeOperation;
+            OnDidCompute += Calculator_OnDidCompute;
+            OnUnableToCompute += Calculator_OnUnableToCompute;
+        }
+
         public void AddDigit(int digit)
         {
-            if (RightValue == null) RightValue = digit;
-            else RightValue = RightValue * 10 + digit;
-            OnDidChangeRight(this, new CalculatorEventArgs("Изменилось правое значение", null, RightValue, null));
+            if (RightValue == null)
+            {
+                RightValue = digit;
+                OnDidChangeRight(this, new CalculatorEventArgs("Добавлена первая цифра в правое значение", null, RightValue, null));
+            }
+            else
+            {
+                RightValue = RightValue * 10 + digit;
+                OnDidChangeRight(this, new CalculatorEventArgs("Добавлена следующая цифра в правое значение", null, RightValue, null));
+            }
         }
 
         public void AddOperation(CalculatorOperation op)
@@ -30,10 +48,31 @@ namespace Lab6
                 new CalculatorEventArgs("Изменился оператор", null, null, Operation));
             LeftValue = RightValue;
             OnDidChangeRight(this,
-                new CalculatorEventArgs("Изменилось правое значение", null, RightValue, null));
+                new CalculatorEventArgs("Левое значение приняло правое", null, RightValue, null));
             RightValue = null;
             OnDidChangeLeft(this,
-                new CalculatorEventArgs("Изменилось левое значение", LeftValue, null, null));
+                new CalculatorEventArgs("Правое значение обнулено", null, null, null));
+        }
+
+        private void Calculator_OnDidChangeOperation(ICalculator sender, CalculatorEventArgs eventArgs)
+        {
+            Logger.WriteLog("log.txt", eventArgs.Message + " " + eventArgs.Operation.Value);
+        }
+
+        private void Calculator_OnDidChangeRight(ICalculator sender, CalculatorEventArgs eventArgs)
+        {
+            Logger.WriteLog("log.txt", eventArgs.Message + " " + eventArgs.RightValue);
+        }
+
+        private void Calculator_OnDidChangeLeft(ICalculator sender, CalculatorEventArgs eventArgs)
+        {
+            Logger.WriteLog("log.txt", eventArgs.Message + " " + eventArgs.LeftValue);
+        }
+
+        private void Calculator_OnDidCompute(ICalculator sender, CalculatorEventArgs eventArgs)
+        {
+            var e = eventArgs as ComputeEventArgs;
+            Logger.WriteLog("log.txt", $"Посчитано {e.LeftValue} {(char)(CalculatorOperation)e.Operation} {e.RightValue}={e.Result}");
         }
 
         public void Clear()
@@ -79,6 +118,11 @@ namespace Lab6
                         break;
                 }
             }
+        }
+
+        private void Calculator_OnUnableToCompute(ICalculator sender, CalculatorEventArgs eventArgs)
+        {
+            Logger.WriteLog("log.txt", eventArgs.Message);
         }
     }
 }
