@@ -11,7 +11,7 @@ namespace Lab6
         {
             using (StreamWriter sw = new StreamWriter(path, true, Encoding.Default))
             {
-                sw.WriteLine(DateTime.Now.ToShortTimeString() + " " + text);
+                sw.WriteLine(" " + text);
             }
         }
     }

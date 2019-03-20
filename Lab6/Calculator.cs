@@ -43,15 +43,33 @@ namespace Lab6
 
         public void AddOperation(CalculatorOperation op)
         {
-            Operation = op;
-            OnDidChangeOperation(this,
-                new CalculatorEventArgs("Изменился оператор", null, null, Operation));
-            LeftValue = RightValue;
-            OnDidChangeRight(this,
-                new CalculatorEventArgs("Левое значение приняло правое", null, RightValue, null));
-            RightValue = null;
-            OnDidChangeLeft(this,
-                new CalculatorEventArgs("Правое значение обнулено", null, null, null));
+            if (Operation == null)
+            {
+                LeftValue = RightValue;
+                OnDidChangeRight(this,
+                    new CalculatorEventArgs("Левое значение приняло правое", null, RightValue, null));
+                RightValue = null;
+                OnDidChangeLeft(this,
+                    new CalculatorEventArgs("Правое значение обнулено", null, null, null));
+                Operation = op;
+                OnDidChangeOperation(this,
+                    new CalculatorEventArgs("Изменился оператор", null, null, Operation));
+            }
+            else if (Operation != null)
+            {
+                Compute();
+                OnDidCompute(this,
+                    new ComputeEventArgs(LeftValue.Value, RightValue.Value, Operation.Value, Result.Value));
+                LeftValue = Result;
+                OnDidChangeRight(this,
+                    new CalculatorEventArgs("Левое значение приняло результат", Result, null, null));
+                RightValue = null;
+                OnDidChangeLeft(this,
+                    new CalculatorEventArgs("Правое значение обнулено", null, null, null));
+                Operation = op;
+                OnDidChangeOperation(this,
+                    new CalculatorEventArgs("Изменился оператор", null, null, Operation));
+            }
         }
 
         private void Calculator_OnDidChangeOperation(ICalculator sender, CalculatorEventArgs eventArgs)
