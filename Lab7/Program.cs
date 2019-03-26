@@ -26,7 +26,6 @@ namespace Lab7
             Application.SetCompatibleTextRenderingDefault(false);
 
             ICalculator calc = null;
-
             Application.Run(new CalculatorForm(calc));
         }
     }

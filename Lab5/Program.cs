@@ -77,9 +77,9 @@ namespace Lab5
             Console.WriteLine(stud.FullName);
             Console.WriteLine((stud as Person).FullName);
             // Вызов статического метода
-            Person pers = Person.Read(Console.In);
-            Student stud2 = new Student(pers, "БТ", 3, 1);
-            Console.WriteLine(stud2);
+            //Person pers = Person.Read(Console.In);
+            //Student stud2 = new Student(pers, "БТ", 3, 1);
+            //Console.WriteLine(stud2);
             string minSalaryStr = "";
             double minSalaryDouble = salaries.Values.Min();
             foreach (var i in salaries)

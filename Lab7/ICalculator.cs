@@ -27,6 +27,11 @@ namespace Lab7
         double? Result { get; }
 
         /// <summary>
+        /// Добавляет точку
+        /// </summary>
+        void AddPoint(double digit, int nextAfterPoint);
+
+        /// <summary>
         /// Добавить цифру.
         /// Добавляет цифру справа к правому значению
         /// </summary>
@@ -35,6 +40,7 @@ namespace Lab7
 
         event CalculatorEvent OnDidChangeLeft;
         event CalculatorEvent OnDidChangeRight;
+        event CalculatorEvent OnPointAdded;
 
         /// <summary>
         /// Добавить следующую арифметическую операцию.
@@ -62,5 +68,7 @@ namespace Lab7
         /// Очищает внутренниее сосотояние калькулятора.
         /// </summary>
         void Clear();
+
+        void Calculator_OnUnableToCompute(ICalculator sender, CalculatorEventArgs eventArgs);
     }
 }

@@ -20,11 +20,7 @@ namespace Lab6
 
         public Calculator()
         {
-            OnDidChangeRight += Calculator_OnDidChangeRight;
-            OnDidChangeLeft += Calculator_OnDidChangeLeft;
-            OnDidChangeOperation += Calculator_OnDidChangeOperation;
-            OnDidCompute += Calculator_OnDidCompute;
-            OnUnableToCompute += Calculator_OnUnableToCompute;
+            
         }
 
         public void AddDigit(int digit)
@@ -72,26 +68,6 @@ namespace Lab6
             }
         }
 
-        private void Calculator_OnDidChangeOperation(ICalculator sender, CalculatorEventArgs eventArgs)
-        {
-            Logger.WriteLog("log.txt", eventArgs.Message + " " + eventArgs.Operation.Value);
-        }
-
-        private void Calculator_OnDidChangeRight(ICalculator sender, CalculatorEventArgs eventArgs)
-        {
-            Logger.WriteLog("log.txt", eventArgs.Message + " " + eventArgs.RightValue);
-        }
-
-        private void Calculator_OnDidChangeLeft(ICalculator sender, CalculatorEventArgs eventArgs)
-        {
-            Logger.WriteLog("log.txt", eventArgs.Message + " " + eventArgs.LeftValue);
-        }
-
-        private void Calculator_OnDidCompute(ICalculator sender, CalculatorEventArgs eventArgs)
-        {
-            var e = eventArgs as ComputeEventArgs;
-            Logger.WriteLog("log.txt", $"Посчитано {e.LeftValue} {(char)(CalculatorOperation)e.Operation} {e.RightValue}={e.Result}");
-        }
 
         public void Clear()
         {
@@ -136,11 +112,6 @@ namespace Lab6
                         break;
                 }
             }
-        }
-
-        private void Calculator_OnUnableToCompute(ICalculator sender, CalculatorEventArgs eventArgs)
-        {
-            Logger.WriteLog("log.txt", eventArgs.Message);
         }
     }
 }

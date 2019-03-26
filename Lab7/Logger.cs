@@ -1,18 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.IO;
 using System.Text;
-using System.IO;
 
 namespace Lab7
 {
-    static class Logger
+    class Logger
     {
-        public static void WriteLog(string path, string text)
+        string Path { get; }
+        public Logger(string path)
         {
-            using (StreamWriter sw = new StreamWriter(path, true, Encoding.Default))
+            Path = path;
+        }
+        public void WriteLog(string text)
+        {
+            using (StreamWriter sw = new StreamWriter(Path, true, Encoding.Default))
             {
-                sw.WriteLine(DateTime.Now.ToShortTimeString() + " " + text);
+                sw.WriteLine(" " + text);
             }
         }
+
+        public void Calculator_OnPointAdded(ICalculator sender, CalculatorEventArgs eventArgs)
+        {
+            WriteLog(eventArgs.Message + " " + eventArgs.RightValue);
+        }
+
+        public void Calculator_OnDidChangeOperation(ICalculator sender, CalculatorEventArgs eventArgs)
+        {
+            WriteLog(eventArgs.Message + " " + eventArgs.Operation.Value);
+        }
+
+        public void Calculator_OnDidChangeRight(ICalculator sender, CalculatorEventArgs eventArgs)
+        {
+            WriteLog(eventArgs.Message + " " + eventArgs.RightValue);
+        }
+
+        public void Calculator_OnDidChangeLeft(ICalculator sender, CalculatorEventArgs eventArgs)
+        {
+            WriteLog(eventArgs.Message + " " + eventArgs.LeftValue);
+        }
+
+        public void Calculator_OnDidCompute(ICalculator sender, CalculatorEventArgs eventArgs)
+        {
+            var e = eventArgs as ComputeEventArgs;
+            WriteLog($"Посчитано {e.LeftValue} {(char)(CalculatorOperation)e.Operation} {e.RightValue}={e.Result}");
+        }
+
     }
 }

@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Lab7
 {
@@ -18,21 +17,16 @@ namespace Lab7
         public event CalculatorEvent OnDidChangeOperation;
         public event CalculatorEvent OnDidCompute;
         public event CalculatorEvent OnUnableToCompute;
-        public event CalculatorEvent OnClear;
+        public event CalculatorEvent OnPointAdded;
 
-        public Calculator()
+        public void AddPoint(double digit, int nextAfterPoint)
         {
-            OnDidChangeRight += Calculator_OnDidChangeRight;
-            OnDidChangeLeft += Calculator_OnDidChangeLeft;
-            OnDidChangeOperation += Calculator_OnDidChangeOperation;
-            OnDidCompute += Calculator_OnDidCompute;
-            OnUnableToCompute += Calculator_OnUnableToCompute;
-            OnClear += Calculator_OnClear;
-        }
-
-        private void Calculator_OnClear(ICalculator sender, CalculatorEventArgs eventArgs)
-        {
-            Logger.WriteLog("log.txt", eventArgs.Message);
+            for (int i = 0; i < nextAfterPoint; ++i)
+            {
+                digit = digit * 0.1;
+            }
+            RightValue += digit;
+            OnPointAdded(this, new CalculatorEventArgs("Добавлена точка", null, RightValue, null));
         }
 
         public void AddDigit(int digit)
@@ -48,13 +42,15 @@ namespace Lab7
                 OnDidChangeRight(this, new CalculatorEventArgs("Добавлена следующая цифра в правое значение", null, RightValue, null));
             }
         }
-        /// Добавить следующую арифметическую операцию.
-        /// Изменяет значение Operation. 
-        /// Если операция уже задана, то вычисляет результат
-        /// и переносит его в левое значение.
-        /// Если операция не задана, то переносит правое значение влево.
+
         public void AddOperation(CalculatorOperation op)
         {
+            if (RightValue == null)
+            {
+                RightValue = 0;
+                OnDidChangeRight(this,
+                    new CalculatorEventArgs("В правое помещен 0", null, null, null));
+            }
             if (Operation == null)
             {
                 LeftValue = RightValue;
@@ -74,7 +70,7 @@ namespace Lab7
                     new ComputeEventArgs(LeftValue.Value, RightValue.Value, Operation.Value, Result.Value));
                 LeftValue = Result;
                 OnDidChangeRight(this,
-                    new CalculatorEventArgs("Левое значение приняло результат", null, RightValue, null));
+                    new CalculatorEventArgs("Левое значение приняло результат", Result, null, null));
                 RightValue = null;
                 OnDidChangeLeft(this,
                     new CalculatorEventArgs("Правое значение обнулено", null, null, null));
@@ -84,26 +80,6 @@ namespace Lab7
             }
         }
 
-        private void Calculator_OnDidChangeOperation(ICalculator sender, CalculatorEventArgs eventArgs)
-        {
-            Logger.WriteLog("log.txt", eventArgs.Message + " " + eventArgs.Operation.Value);
-        }
-
-        private void Calculator_OnDidChangeRight(ICalculator sender, CalculatorEventArgs eventArgs)
-        {
-            Logger.WriteLog("log.txt", eventArgs.Message + " " + eventArgs.RightValue);
-        }
-
-        private void Calculator_OnDidChangeLeft(ICalculator sender, CalculatorEventArgs eventArgs)
-        {
-            Logger.WriteLog("log.txt", eventArgs.Message + " " + eventArgs.LeftValue);
-        }
-
-        private void Calculator_OnDidCompute(ICalculator sender, CalculatorEventArgs eventArgs)
-        {
-            var e = eventArgs as ComputeEventArgs;
-            Logger.WriteLog("log.txt", $"Посчитано {e.LeftValue} {(char)(CalculatorOperation)e.Operation} {e.RightValue}={e.Result}");
-        }
 
         public void Clear()
         {
@@ -111,7 +87,6 @@ namespace Lab7
             RightValue = null;
             Result = null;
             Operation = null;
-            OnClear(this, new CalculatorEventArgs("Очистка переменных", null, null, null));
         }
 
         public void Compute()
@@ -145,15 +120,14 @@ namespace Lab7
                         }
                         break;
                     default:
-                        Clear();
                         break;
                 }
             }
         }
 
-        private void Calculator_OnUnableToCompute(ICalculator sender, CalculatorEventArgs eventArgs)
+        public void Calculator_OnUnableToCompute(ICalculator sender, CalculatorEventArgs eventArgs)
         {
-            Logger.WriteLog("log.txt", eventArgs.Message);
+            MessageBox.Show("Не получилось посчитать", "Ну вот!");
         }
     }
 }

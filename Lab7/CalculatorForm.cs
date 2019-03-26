@@ -9,24 +9,31 @@ namespace Lab7
         private Button[,] buttons = null;
         private TextBox output = null;
         private ICalculator calc;
-        
+
         private string[,] symbols = {
             { "7", "8", "9", "/" },
             { "4", "5", "6", "*" },
             { "1", "2", "3", "-" },
             { "0", ",", "=", "+"}
         };
-        
-        public CalculatorForm(ICalculator calc)
+
+        public CalculatorForm(ICalculator calcl)
         {
-            this.calc = new Calculator();
+            calc = new Calculator();
+            Logger lgr = new Logger("log.txt");
+            calc.OnDidChangeRight += lgr.Calculator_OnDidChangeRight;
+            calc.OnDidChangeLeft += lgr.Calculator_OnDidChangeLeft;
+            calc.OnDidChangeOperation += lgr.Calculator_OnDidChangeOperation;
+            calc.OnDidCompute += lgr.Calculator_OnDidCompute;
+            calc.OnUnableToCompute += calc.Calculator_OnUnableToCompute;
+            calc.OnPointAdded += lgr.Calculator_OnPointAdded;
             //
             int offset = 8;
             Point origin = new Point(offset, offset);
             ClientSize = new Size(480, 640);
             Text = "Calculator";
             AutoScaleMode = AutoScaleMode.Font;
-            
+
             Size buttonSize = new Size(
                 (ClientSize.Width - origin.X) / symbols.GetLength(1) - offset,
                 (ClientSize.Height - origin.Y) / (symbols.GetLength(0) + 1) - offset
@@ -96,19 +103,38 @@ namespace Lab7
             output.AppendText(btn.Text);
             if (btn.Text == "=")
             {
-                Parse(calc, output.Text);
-                output.Text = calc.Result.Value.ToString();
-                calc.Clear();
+                try
+                {
+                    Parse(calc, output.Text);
+                    output.Text = calc.Result.Value.ToString();
+                    calc.Clear();
+                }
+                catch (InvalidOperationException)
+                {
+                    MessageBox.Show("Не посчиталось", "Ну вот опять!");
+                }
             }
         }
 
         static void Parse(ICalculator calc, string expression)
         {
+            int numsAfterPoint = 0;
             foreach (char c in expression)
             {
                 if (char.IsDigit(c))
                 {
-                    calc?.AddDigit(c - '0');
+                    if (calc.RightValue == null) numsAfterPoint = 0;
+                    if (numsAfterPoint > 0)
+                    {
+                        calc.AddPoint(c - '0', numsAfterPoint);
+                        numsAfterPoint++;
+                    }
+                    else
+                        calc?.AddDigit(c - '0');
+                }
+                else if (c == ',')
+                {
+                    numsAfterPoint++;
                 }
                 else if (c == '=')
                 {

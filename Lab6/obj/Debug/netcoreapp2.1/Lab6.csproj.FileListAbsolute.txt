@@ -31,3 +31,14 @@ C:\Users\public static void\Desktop\RKSI.Net-Solved-master\Lab6\obj\Debug\netcor
 C:\Users\public static void\Desktop\RKSI.Net-Solved-master\Lab6\obj\Debug\netcoreapp2.1\Lab6.AssemblyInfo.cs
 C:\Users\public static void\Desktop\RKSI.Net-Solved-master\Lab6\obj\Debug\netcoreapp2.1\Lab6.dll
 C:\Users\public static void\Desktop\RKSI.Net-Solved-master\Lab6\obj\Debug\netcoreapp2.1\Lab6.pdb
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI.Net-Solved-master\Lab6\bin\Debug\netcoreapp2.1\Lab6.deps.json
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI.Net-Solved-master\Lab6\bin\Debug\netcoreapp2.1\Lab6.runtimeconfig.json
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI.Net-Solved-master\Lab6\bin\Debug\netcoreapp2.1\Lab6.runtimeconfig.dev.json
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI.Net-Solved-master\Lab6\bin\Debug\netcoreapp2.1\Lab6.dll
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI.Net-Solved-master\Lab6\bin\Debug\netcoreapp2.1\Lab6.pdb
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI.Net-Solved-master\Lab6\obj\Debug\netcoreapp2.1\Lab6.csprojAssemblyReference.cache
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI.Net-Solved-master\Lab6\obj\Debug\netcoreapp2.1\Lab6.csproj.CoreCompileInputs.cache
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI.Net-Solved-master\Lab6\obj\Debug\netcoreapp2.1\Lab6.AssemblyInfoInputs.cache
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI.Net-Solved-master\Lab6\obj\Debug\netcoreapp2.1\Lab6.AssemblyInfo.cs
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI.Net-Solved-master\Lab6\obj\Debug\netcoreapp2.1\Lab6.dll
+C:\Users\Scarecrow\Desktop\Projects\C#\RKSI.Net-Solved-master\Lab6\obj\Debug\netcoreapp2.1\Lab6.pdb
